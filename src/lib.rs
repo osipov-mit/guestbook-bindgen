@@ -5,38 +5,27 @@ use gstd::{msg, prelude::*};
 use scale_info::TypeInfo;
 use wasm_bindgen::prelude::*;
 
-#[derive(TypeInfo, Decode)]
-pub enum Action {
-    AddMessage(MessageIn),
-    ViewMessages,
-}
-
 #[derive(TypeInfo, Decode, Encode)]
 pub struct MessageIn {
     author: String,
     msg: String,
 }
 
-gstd::metadata! {
-    title: "Guestbook",
-    handle:
-        input: Action,
-        output: Vec<MessageIn>,
-}
-
 static mut MESSAGES: Vec<MessageIn> = Vec::new();
 
 #[no_mangle]
 pub unsafe extern "C" fn handle() {
-    let action: Action = msg::load().unwrap();
-
-    match action {
-        Action::AddMessage(message) => {
+    let input: Vec<u8> = msg::load().unwrap();
+    match input.first().unwrap() {
+        &0 => {
+            let v: Vec<u8> = input[1..].to_vec();
+            let message = MessageIn::decode(&mut v.as_slice()).unwrap();
             MESSAGES.push(message);
         }
-        Action::ViewMessages => {
+        &1 => {
             msg::reply(&MESSAGES, 0, 0);
         }
+        _ => {}
     }
 }
 
@@ -44,14 +33,23 @@ pub unsafe extern "C" fn handle() {
 pub unsafe extern "C" fn init() {}
 
 #[wasm_bindgen]
-pub fn title() -> Vec<u8> {
-    // let m = MessageIn {
-    //     author: String::from("author").to_string(),
-    //     msg: String::from("author").to_string(),
-    // };
-    // m.encode().as_ref()
-    let v: Vec<u8> = Vec::new();
-    v
+pub enum Functions {
+    AddMessage = 0,
+    ViewMessages = 1,
+}
 
-    // "Guestbook".into()
+#[wasm_bindgen]
+pub fn handle_encode(func: Functions, author: String, msg: String) -> Vec<u8> {
+    let mut v: Vec<u8> = Vec::new();
+    match func {
+        Functions::AddMessage => {
+            v.push(0);
+            let mut m = MessageIn { author, msg }.encode();
+            v.append(&mut m);
+        }
+        Functions::ViewMessages => {
+            v.push(1);
+        }
+    };
+    v
 }

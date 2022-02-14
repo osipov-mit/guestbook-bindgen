@@ -1,0 +1,19 @@
+{
+  "name": "guestbook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "pkg/index.js",
+  "scripts": {
+    "clean": "node clean.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osipov-mit/guestbook-bindgen.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/osipov-mit/guestbook-bindgen/issues"
+  },
+  "homepage": "https://github.com/osipov-mit/guestbook-bindgen#readme"
+}
