@@ -1,5 +1,5 @@
 [package]
-name = "guestbook"
+name = "bindgen-guestbook"
 version = "0.1.0"
 authors = ["Gear Technologies"]
 edition = "2018"
@@ -13,3 +13,8 @@ gstd = { path = "/Users/dmitriiosipov/wasm-bindgen/gear/gstd", features = ["debu
 scale-info = { version = "1.0.0", default-features = false, features = ["derive"] }
 codec = { package = "parity-scale-codec", version = "2.0.0", default-features = false, features = ["derive"] }
 wasm-bindgen = { version = "0.2.79" }
+
+
+[profile.release]
+lto = true
+opt-level = 's'

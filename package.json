@@ -2,9 +2,10 @@
   "name": "guestbook",
   "version": "1.0.0",
   "description": "",
-  "main": "pkg/index.js",
   "scripts": {
-    "clean": "node clean.js"
+    "clean": "rm -rf node_modules && make clean",
+    "build": "make build && make bindgen",
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
@@ -14,6 +15,10 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/osipov-mit/guestbook-bindgen/issues"
+  },
+  "dependencies": {
+    "@polkadot/util": "^8.4.1",
+    "env": "file:./env"
   },
   "homepage": "https://github.com/osipov-mit/guestbook-bindgen#readme"
 }

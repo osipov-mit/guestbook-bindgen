@@ -7,3 +7,4 @@ files.forEach((name) => {
     rmSync(resolve(join('pkg', name)));
   }
 });
+rmSync('./target', { recursive: true, force: true });

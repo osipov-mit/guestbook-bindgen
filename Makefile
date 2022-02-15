@@ -2,7 +2,16 @@ clean:
 	node clean.js
 
 build:
-	cargo +nightly build --release --target wasm32-unknown-unknown
+	cargo +nightly build --target wasm32-unknown-unknown --release
 
 bindgen:
-	wasm-bindgen target/wasm32-unknown-unknown/release/guestbook.wasm --out-dir ./pkg/ --target nodejs
+	wasm-bindgen target/wasm32-unknown-unknown/release/bindgen_guestbook.wasm --out-dir ./pkg/ --target nodejs
+
+install: 
+	yarn install
+
+test: 
+	yarn test
+
+all: clean build bindgen install
+
