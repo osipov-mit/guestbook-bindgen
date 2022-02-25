@@ -1,7 +1,7 @@
 const { u8aToHex } = require('@polkadot/util');
 const { strictEqual, deepEqual } = require('assert');
 
-const rust = import('./pkg/bindgen_guestbook.js');
+const rust = import('./pkg/wrapper.js');
 
 /**
  *

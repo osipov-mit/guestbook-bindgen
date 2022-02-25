@@ -3,7 +3,6 @@
 use codec::{Decode, Encode};
 use gstd::{msg, prelude::*};
 use scale_info::TypeInfo;
-use wasm_bindgen::prelude::*;
 
 static mut STATE: Vec<MessageIn> = Vec::new();
 
@@ -22,7 +21,7 @@ pub unsafe extern "C" fn handle() {
             STATE.push(MessageIn::decode(&mut v.as_slice()).unwrap())
         }
         &1 => {
-            msg::reply(&STATE, 0, 0);
+            msg::reply(&STATE, 0);
         }
         _ => {}
     }
@@ -31,18 +30,3 @@ pub unsafe extern "C" fn handle() {
 #[no_mangle]
 pub unsafe extern "C" fn init() {}
 
-#[wasm_bindgen]
-pub fn add_message(author: String, msg: String) -> Vec<u8> {
-    let mut v: Vec<u8> = Vec::new();
-    v.push(0);
-    let mut m = MessageIn { author, msg }.encode();
-    v.append(&mut m);
-    v
-}
-
-#[wasm_bindgen]
-pub fn view_messages() -> Vec<u8> {
-    let mut v: Vec<u8> = Vec::new();
-    v.push(1);
-    v
-}
