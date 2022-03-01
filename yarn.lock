@@ -9,7 +9,7 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@gear-js/api@^0.13.0":
+"@gear-js/api@0.13.0":
   version "0.13.0"
   resolved "https://registry.yarnpkg.com/@gear-js/api/-/api-0.13.0.tgz#1d5389a41e2ed6ed9def080fa50af0d6f5d30494"
   integrity sha512-yPj80hZIdOmRvWo4CF9C+WNM0nvTOaCS4gtxHZT/f9djdQGj3MEsbUAZp0P2YyhFKnF3w1gRGd/Ea9G20OdtJA==
@@ -64,7 +64,7 @@
     "@polkadot/util-crypto" "^8.4.1"
     rxjs "^7.5.4"
 
-"@polkadot/api@7.9.1", "@polkadot/api@^7.9.1":
+"@polkadot/api@7.9.1":
   version "7.9.1"
   resolved "https://registry.yarnpkg.com/@polkadot/api/-/api-7.9.1.tgz#56d29bb3bc4822e80c94b1267e8f63a7f067e6ea"
   integrity sha512-bV+qaUwbNsPwLYVQ2ZmA7Spi8znp1RrNGJPP3ZiR96vdShe4iLizbkcPpV+X9+E/tytvTouU2pGUM4UW4EsQ5w==
