@@ -9,10 +9,10 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@gear-js/api@^0.14.2":
-  version "0.14.2"
-  resolved "https://registry.yarnpkg.com/@gear-js/api/-/api-0.14.2.tgz#40af2dfd8b6730d378b5199dcf7b8fa245184701"
-  integrity sha512-pO8BAWgQ5dfHhHoe4XNFWIEP0MFAU4dQ6JMFvQKkDQ5qen+SkdaqVaoJOwmcafr4ARAUTa5gg5WZe2a1lCF1xg==
+"@gear-js/api@0.13.0":
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/@gear-js/api/-/api-0.13.0.tgz#1d5389a41e2ed6ed9def080fa50af0d6f5d30494"
+  integrity sha512-yPj80hZIdOmRvWo4CF9C+WNM0nvTOaCS4gtxHZT/f9djdQGj3MEsbUAZp0P2YyhFKnF3w1gRGd/Ea9G20OdtJA==
 
 "@noble/hashes@1.0.0":
   version "1.0.0"
