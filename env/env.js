@@ -18,31 +18,32 @@ module.exports = {
     return memory.grow(pages);
   },
   free: (_pages) => {},
-  gr_debug: (msg) => {
-    showDebug && console.log('GR_DEBUG: ', msg);
-  },
+  gr_block_height: () => {},
+  gr_block_timestamp: () => {},
+  gr_exit: () => {},
+  gr_gas_available: () => {},
+  gr_program_id: () => {},
+  gr_origin: () => {},
+  gr_leave: () => {},
+  gr_value_available: () => {},
+  gr_wait: () => {},
+  gr_wake: () => {},
   gr_exit_code: () => {},
   gr_msg_id: () => {},
+  gr_read: () => {},
   gr_reply: () => {},
-  gr_read: (at, len, dest) => {
-    new Uint8Array(memory.buffer).set(inputValue.slice(at, len), dest);
-  },
   gr_reply_commit: () => {},
   gr_reply_push: () => {},
   gr_reply_to: () => {},
   gr_send: () => {},
+  gr_send_wgas: () => {},
   gr_send_commit: () => {},
+  gr_send_commit_wgas: () => {},
   gr_send_init: () => {},
   gr_send_push: () => {},
-  gr_size: () => {
-    return inputValue.byteLength;
-  },
+  gr_size: () => {},
   gr_source: () => {},
   gr_value: () => {},
-  gr_block_height: () => {},
-  gr_block_timestamp: () => {},
-  gr_gas_available: () => {},
-  gr_wait: () => {},
-  gr_wake: () => {},
-  gr_program_id: () => {},
+  gr_create_program_wgas: () => {},
+  gr_debug: (msg) => {},
 };

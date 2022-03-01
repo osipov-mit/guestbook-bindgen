@@ -1,7 +1,7 @@
 #![no_std]
 
 use codec::{Decode, Encode};
-use gstd::{msg, prelude::*};
+use gstd::{msg, prelude::*, debug};
 use scale_info::TypeInfo;
 
 static mut STATE: Vec<MessageIn> = Vec::new();
@@ -14,7 +14,8 @@ pub struct MessageIn {
 
 #[no_mangle]
 pub unsafe extern "C" fn handle() {
-    let input: Vec<u8> = msg::load().unwrap();
+    let input: Vec<u8> = msg::load_bytes();
+    debug!(input);
     match input.first().unwrap() {
         &0 => {
             let v: Vec<u8> = input[1..].to_vec();

@@ -2,7 +2,7 @@ clean:
 	node clean.js
 
 build:
-	cargo +nightly build --target wasm32-unknown-unknown --release
+	RUSTFLAGS="-C link-args=--import-memory" cargo +nightly build --target wasm32-unknown-unknown --release
 
 bindgen:
 	wasm-bindgen target/wasm32-unknown-unknown/release/wrapper.wasm --out-dir ./pkg/ --target nodejs

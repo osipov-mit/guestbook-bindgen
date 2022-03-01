@@ -2,7 +2,5 @@
 Cargo.lock
 target/
 pkg/*
-!pkg/env.js
-!pkg/index.js
 node_modules/
 *.wasm
