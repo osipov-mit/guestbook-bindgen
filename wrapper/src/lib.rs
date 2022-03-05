@@ -24,7 +24,7 @@ pub fn __send_add_message(author: String, msg: String) -> Vec<u8> {
 }
 
 #[wasm_bindgen]
-pub fn view_messages() -> Vec<u8> {
+pub fn __query_view_messages() -> Vec<u8> {
     let mut v: Vec<u8> = Vec::new();
     v.push(1);
     v
