@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@gear-js/api": "0.13.0",
-    "@polkadot/api": "7.9.1",
+    "@polkadot/api": "7.11.1",
     "@polkadot/util": "8.4.1",
     "env": "file:./env"
   },
