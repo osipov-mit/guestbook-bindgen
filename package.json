@@ -17,7 +17,7 @@
     "url": "https://github.com/osipov-mit/guestbook-bindgen/issues"
   },
   "dependencies": {
-    "@gear-js/api": "0.13.0",
+    "@gear-js/api": "0.14.3",
     "@polkadot/api": "7.9.1",
     "@polkadot/util": "8.4.1",
     "env": "file:./env"
